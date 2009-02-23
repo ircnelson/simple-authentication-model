@@ -9,7 +9,7 @@ module Authentication
 
 			def self.authenticate(login, password)
 				return nil if login.blank? || password.blank?
-				u = find :first, :conditions => { :email => login }
+				u = find :first, :conditions => { :email => login } #check login by email
 				u && u.authenticated?(password) ? u : nil
 			end
 	
